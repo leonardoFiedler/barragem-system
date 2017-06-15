@@ -1,0 +1,19 @@
+<md-toolbar color="primary">Barragem System</md-toolbar>
+<md-card color="primary">
+  <md-card-title>Bem Vindo!</md-card-title >
+  <md-card-content >
+
+    <span class="errorMessage">{{errorMessage}}</span>
+
+    <md-input-container>
+      <input [(ngModel)]="userId" mdInput placeholder="Usuário">
+    </md-input-container>
+
+    <md-input-container>
+      <input type="password" [(ngModel)]="userPassword" mdInput placeholder="Senha">
+    </md-input-container>
+
+    <button class= "login" (click)="login()" md-raised-button color="primary">Entrar</button>
+  </md-card-content>
+</md-card>
+<router-outlet></router-outlet>
