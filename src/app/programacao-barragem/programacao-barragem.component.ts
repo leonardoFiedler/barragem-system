@@ -24,7 +24,7 @@ export class ProgramacaoBarragemComponent implements OnInit {
     var service = this.programacaoBarragemService.obter();
     service.subscribe(
         response => {
-          alert(response);
+          alert("Deu bom " + response.res);
         },
         error => {
           alert(error);

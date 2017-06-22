@@ -23,6 +23,7 @@ app.get('/', function (req, res) {
 app.get('/receber-valores', function (req, res) {
     console.log("Chamou o /receber-valores");
     var resultado = ""
+    res.setHeader('Access-Control-Allow-Origin', '*');
     /*var req = coap.request('coap://192.168.0.7/obter');
 
     req.on('response', function(response) {

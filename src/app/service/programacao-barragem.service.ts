@@ -24,11 +24,7 @@ export class ProgramacaoBarragemService {
 
 
   public obter () : Observable<any>{
-    // 'Content-Type': 'application/json', 
-    let headers = new Headers({ 'Access-Control-Allow-Origin' : '*' });
-    headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
-    headers.append('Access-Control-Allow-Credentials', 'true');
-    let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions();
     return this.http.get('http://localhost:3000/receber-valores', options)
       .map(
         response => {
