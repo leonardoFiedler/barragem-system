@@ -1,30 +1,30 @@
 <md-toolbar color="primary">Barragem System</md-toolbar>
 <br>
 <md-card color="primary">
-  <md-card-title>Barragem 1</md-card-title >
-  <md-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason">
-  <md-radio-button class="example-radio-button" *ngFor="let st of status" [value]="stBarragem01" [checked]="st == stBarragem01">
-    {{st}}
-  </md-radio-button>
-</md-radio-group>
+  <md-card-title>Barragem 1</md-card-title>
+  <md-radio-group class="example-radio-group" [(ngModel)]="stBarragem01">
+    <md-radio-button class="example-radio-button" *ngFor="let st of status" [value]="st" [checked]="st == stBarragem01">
+      {{st}}
+    </md-radio-button>
+  </md-radio-group>
 </md-card>
 
 <md-card color="primary">
   <md-card-title>Barragem 2</md-card-title >
-  <md-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason">
-  <md-radio-button class="example-radio-button" *ngFor="let st of status" [value]="stBarragem01" [checked]="st == stBarragem01">
-    {{st}}
-  </md-radio-button>
-</md-radio-group>
+  <md-radio-group class="example-radio-group" [(ngModel)]="stBarragem02">
+    <md-radio-button class="example-radio-button" *ngFor="let st of status" [value]="st" [checked]="st == stBarragem02">
+      {{st}}
+    </md-radio-button>
+  </md-radio-group>
 </md-card>
 
 <md-card color="primary">
   <md-card-title>Barragem 3</md-card-title >
-  <md-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason">
-  <md-radio-button class="example-radio-button" *ngFor="let st of status" [value]="stBarragem01" [checked]="st == stBarragem01">
-    {{st}}
-  </md-radio-button>
-</md-radio-group>
+  <md-radio-group class="example-radio-group" [(ngModel)]="stBarragem03">
+    <md-radio-button class="example-radio-button" *ngFor="let st of status" [value]="st" [checked]="st == stBarragem03">
+      {{st}}
+    </md-radio-button>
+  </md-radio-group>
 </md-card>
 <br>
 

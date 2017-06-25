@@ -11,13 +11,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from "@angular/material";
 import { appRoutes } from './app.route';
 import { ProgramacaoBarragemComponent } from './programacao-barragem/programacao-barragem.component';
+import { InscricaoComponent } from './inscricao/inscricao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     IndexComponent,
-    ProgramacaoBarragemComponent
+    ProgramacaoBarragemComponent,
+    InscricaoComponent
   ],
   imports: [
     BrowserModule,

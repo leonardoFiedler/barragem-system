@@ -1,0 +1,18 @@
+<md-toolbar color="primary">Barragem System - Inscrição</md-toolbar>
+<br>
+<md-card color="primary">
+  <md-card-title>Inscreva-se</md-card-title>
+
+  <md-input-container>
+    <input [(ngModel)]="email" mdInput placeholder="E-mail">
+  </md-input-container>
+  <br>
+  <md-select placeholder="Frequencia de envio de alerta" [(ngModel)]="time" name="tempo">
+    <md-option *ngFor="let time of times" [value]="time.value">
+      {{time.viewValue}}
+    </md-option>
+  </md-select>
+  <br>
+  <br>
+  <button (click)="inscrever()" md-raised-button color="primary">Inscrever-se</button>
+</md-card>

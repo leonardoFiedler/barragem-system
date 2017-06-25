@@ -9,9 +9,11 @@ export class ProgramacaoBarragemService {
   constructor(public http: Http) { }
 
   public definir (values) : Observable<any>{
-    let param:URLSearchParams = new URLSearchParams();
-    param.set('values', values);
-    return this.http.get('http://localhost:3000/definir', {search : param})
+    var contentHeaders = new Headers();
+    contentHeaders.append('Accept', 'application/json');
+    contentHeaders.append('Content-Type', 'application/json');
+    let body = JSON.stringify({values});
+    return this.http.post('http://localhost:3000/definir', body, { headers: contentHeaders })
       .map(
         response => {
           return response.json();
@@ -21,7 +23,6 @@ export class ProgramacaoBarragemService {
         }
       );
   }
-
 
   public obter () : Observable<any>{
     let options = new RequestOptions();

@@ -18,4 +18,8 @@ export class IndexComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  inscricao() {
+    this.router.navigate(['inscricao']);
+  }
+
 }
