@@ -9,7 +9,7 @@ export class InscricaoService {
 
   public inscrever (email, frequencia) : Observable<any> {
     let options = new RequestOptions();
-    return this.http.post('http://localhost:3000/inscrever', options)
+    return this.http.post('http://192.168.0.3:3000/inscrever', options)
       .map(
         response => {
           return response.json();

@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Origin', 'http://192.168.0.3:4200');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -29,6 +29,22 @@ app.use(function (req, res, next) {
 app.post('/definir', function (req, res) {
     console.log("Chamou o /definir");
     console.log("Values " + req.body.values);
+    var resultado = ""
+    // res.setHeader('Access-Control-Allow-Origin', '*');
+    var req = coap.request('coap://192.168.0.7/' + req.body.values);
+    req.on('response', function(response) {
+        var resultado = response._packet.payload
+        console.log("Response " + resultado);
+        res.setHeader('Access-Control-Allow-Origin','*')
+        res.status(200).send({res : resultado});
+    });
+    req.end();
+});
+
+app.post('/inscrever', function (req, res) {
+    console.log("Chamou o /inscrever");
+    console.log("E-mail " + req.body.email);
+    console.log("Frequencia " + req.body.frequencia);
     var resultado = ""
     // res.setHeader('Access-Control-Allow-Origin', '*');
     var req = coap.request('coap://192.168.0.7/' + req.body.values);

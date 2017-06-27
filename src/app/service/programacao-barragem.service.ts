@@ -13,7 +13,7 @@ export class ProgramacaoBarragemService {
     contentHeaders.append('Accept', 'application/json');
     contentHeaders.append('Content-Type', 'application/json');
     let body = JSON.stringify({values});
-    return this.http.post('http://localhost:3000/definir', body, { headers: contentHeaders })
+    return this.http.post('http://192.168.0.3:3000/definir', body, { headers: contentHeaders })
       .map(
         response => {
           return response.json();
@@ -26,7 +26,7 @@ export class ProgramacaoBarragemService {
 
   public obter () : Observable<any>{
     let options = new RequestOptions();
-    return this.http.get('http://localhost:3000/receber-valores', options)
+    return this.http.get('http://192.168.0.3:3000/receber-valores', options)
       .map(
         response => {
           return response.json();
